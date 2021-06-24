@@ -1,0 +1,36 @@
+﻿@model MVCLMS.Models.Entity.Operations
+@{
+    ViewBag.Title = "ReturnAway";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateOnLoan", "OnLoan", FormMethod.Post))
+{
+    <div style="margin-bottom: 40px"></div>
+    <div class="form-group">
+        <label>Hareket Id</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        <label>Kitap ADI</label>
+        @Html.TextBoxFor(x => x.Books.Name, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(x => x.Users.Name, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(x => x.Emplooyes.Employee, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(x => x.PurchaseDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <label>Geri Veriş Tarihi</label>
+        @Html.TextBoxFor(x => x.ReturnDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" name="UserReturnDate" value="@DateTime.Now.ToShortDateString()" class="form-control"/>
+    </div>
+    <div style="margin-top:30px"></div>
+    <div>
+        <button class="btn btn-group" style="background-color:#64d8ca; color:white">Ödünç Kitabı Geri Al</button>
+    </div>
+}
+

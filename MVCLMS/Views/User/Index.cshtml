@@ -1,0 +1,40 @@
+﻿@using MVCLMS.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Üyeler</h2>
+<div style="margin-bottom:30px"></div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kullanıcı ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Kullanıcı Mail</th>
+        <th>Kullanıcı Adı</th>
+        <th>Kullanıcı Şifresi</th>
+        <th>Kullanıcı Telefon</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Mail</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            <td>@item.PhoneNumber</td>
+            <td><a href="/User/DeleteUser/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/User/GetUser/@item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index", new { page}))
+<a href="/User/AddUser/" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+

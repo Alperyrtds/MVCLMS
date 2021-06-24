@@ -1,0 +1,28 @@
+﻿@model MVCLMS.Models.Entity.Writers
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+<form method="post" class="form-group">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x=>x.Name,new { @class="form-control"})
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x=>x.Surname, new {@class = "form-control"})
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Detay</label>
+        @Html.TextAreaFor(x=>x.Detail, new {@class= "form-control"})
+    </div>
+    <div style="margin-top:20px">
+        <button class="btn btn-info" id="Btn1">Yazar Ekle</button>
+    </div>
+
+    
+</form>

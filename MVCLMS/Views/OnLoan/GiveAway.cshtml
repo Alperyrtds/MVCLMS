@@ -1,0 +1,38 @@
+﻿@model MVCLMS.Models.Entity.Operations
+
+@{
+    ViewBag.Title = "GiveAway";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Üye Id</label>
+        @Html.TextBoxFor(x => x.UserId, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap ID</label>
+        @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.EmployeeId, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap Alış Tarihi</label>
+        <input type="text" class="form-control" name="PurchaseDate" value="@DateTime.Now.ToShortDateString()"/>
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap İade Tarihi</label>
+        <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+
+    <div style="margin-top:20px">
+        <button class="btn btn-group" style="background-color:#31ad77; color:white;">Kitabı Ödünç ver</button>
+        <input type="hidden" name="OperationStatus" value="False" />
+    </div>
+
+
+</form>
+

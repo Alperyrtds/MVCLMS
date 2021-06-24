@@ -1,0 +1,38 @@
+﻿@using MVCLMS.Models.Entity
+@model List<Writers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-bordered ">
+    <tr>
+        <td>ID</td>
+        <td>AD</td>
+        <td>SOYAD</td>
+        <td>DETAY</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Detail</td>
+            <td><a href="/Writer/GetWriter/@item.Id" class="btn btn-success">Güncelle</a></td>
+            <td>
+                @Html.ActionLink("Sil", "DeleteWriter", new { id = item.Id }, new
+                {
+                    @class = "btn btn-danger",
+                    onclick = "return confirm('Silmek İstiyor musunuz?')"
+                })
+        </td>
+    </tr>
+}
+</table>
+<a href="/Writer/AddWriter/" class="btn btn-primary">Yeni Yazar Ekle</a>
+

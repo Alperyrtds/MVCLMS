@@ -1,0 +1,33 @@
+﻿@model MVCLMS.Models.Entity.Writers
+@{
+    ViewBag.Title = "GetWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateWriter", "Writer", FormMethod.Post))
+{
+    <div style="margin-bottom:20px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:20px">
+            <label>Yazar ID</label>
+            @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        </div> 
+        <div style="margin-bottom:20px">
+            <label>Yazar ADI</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        </div> 
+        <div style="margin-bottom:20px">
+            <label>Yazar SOYADI</label>
+            @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:20px">
+            <label>Yazar Detayı</label>
+            @Html.TextAreaFor(x => x.Detail, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-primary">Yazar Bilgilerini Güncelle</button>
+        
+
+    </div>
+
+}
+

@@ -1,0 +1,29 @@
+﻿@using MVCLMS.Models.Entity
+@model List<Emplooyes>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Personeller</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Employee</td>
+            <td><a href="/Employee/DeleteEmployee/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Employee/GetEmployee/@item.Id" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+        
+    }
+</table>
+<a href="/Employee/AddEmployee/" class="btn btn-primary">Yeni Personel Ekle</a>

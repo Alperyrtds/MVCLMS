@@ -1,0 +1,49 @@
+﻿@model MVCLMS.Models.Entity.Users
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+
+    <div style="margin-top:20px">
+        <label>Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Soyadı</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:20px">
+        <label>Mail</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:20px">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+       
+
+    </div>
+    <div style="margin-top:20px">
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password, " ", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Telefon Numarası</label>
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:20px">
+        <label>Fotoğraf Linki</label>
+        @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:20px">
+        <button class="btn btn-info" id="Btn1">Yeni Kullanıcı Ekle</button>
+    </div>
+</form>
+

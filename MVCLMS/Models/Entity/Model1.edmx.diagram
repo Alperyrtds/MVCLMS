@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5e1733b3ade47d99f7f80924258f5c3" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="DBLibraryModel.Books" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Case" Width="1.5" PointX="1.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Categories" Width="1.5" PointX="10.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Emplooyes" Width="1.5" PointX="5.125" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Operations" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Penalties" Width="1.5" PointX="7.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Users" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLibraryModel.Writers" Width="1.5" PointX="10.125" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="DBLibraryModel.FK_Books_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Books_Writers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Operations_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Operations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Penalties_Operations" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Penalties_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLibraryModel.FK_Operations_Emplooyes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

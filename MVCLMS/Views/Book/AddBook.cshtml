@@ -1,0 +1,47 @@
+﻿@model MVCLMS.Models.Entity.Books
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap Kategorisi</label>
+        @Html.DropDownListFor(x => x.Categories.Id, (List<SelectListItem>)ViewBag.val1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kitap Yazarı</label>
+        @Html.DropDownListFor(x => x.Writers.Id, (List<SelectListItem>)ViewBag.val2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.PublicationYear, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yayın Evi</label>
+        @Html.TextBoxFor(x => x.Publisher, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.Page, new { @class = "form-control" })
+    </div>
+    @*<div style="margin-top:20px">
+            <label>Durum</label>
+            @Html.EditorFor(x => x.Status,new {@class="form-control"})
+        </div>*@
+    <input type="hidden" name="Status" value="True" />
+    <div style="margin-top:20px">
+        <button class="btn btn-info" id="Btn1">Kitap Ekle</button>
+    </div>
+
+
+
+</form>
+
+
+
