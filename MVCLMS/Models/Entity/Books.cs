@@ -29,6 +29,7 @@ namespace MVCLMS.Models.Entity
         public string Publisher { get; set; }
         public string Page { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string BookPreview { get; set; }
     
         public virtual Categories Categories { get; set; }
         public virtual Writers Writers { get; set; }

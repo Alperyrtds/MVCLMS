@@ -17,6 +17,7 @@
           <Property Name="Publisher" Type="varchar" MaxLength="50" />
           <Property Name="Page" Type="varchar" MaxLength="5" />
           <Property Name="Status" Type="bit" />
+          <Property Name="BookPreview" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Case">
           <Key>
@@ -269,6 +270,7 @@
           <NavigationProperty Name="Categories" Relationship="Self.FK_Books_Categories" FromRole="Books" ToRole="Categories" />
           <NavigationProperty Name="Writers" Relationship="Self.FK_Books_Writers" FromRole="Books" ToRole="Writers" />
           <NavigationProperty Name="Operations" Relationship="Self.FK_Operations_Books" FromRole="Books" ToRole="Operations" />
+          <Property Name="BookPreview" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Case">
           <Key>
@@ -532,6 +534,7 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="DBLibraryModel.Books">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="BookPreview" ColumnName="BookPreview" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
