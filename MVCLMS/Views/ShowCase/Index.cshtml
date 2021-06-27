@@ -1,5 +1,5 @@
-﻿@using MVCLMS.Models.Entity;
-@model List<Books>
+﻿
+@model MVCLMS.Models.Class.Class1
 @{
     Layout = null;
 }
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Kütüphane Sistemi</a>>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Kütüphane Sistemi</a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -101,7 +101,7 @@
             <div class="row">
 
                 <!-- Portfolio Item 1 -->
-                @foreach (var item in Model)
+                @foreach (var item in Model.Value1)
                 {
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -138,22 +138,18 @@
             </div>
 
             <!-- About Section Content -->
-            <div class="row">
-                <div class="col-lg-4 ml-auto">
-                    <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
-                </div>
-                <div class="col-lg-4 mr-auto">
-                    <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
-                </div>
+            <div class="row-cols-2" style="margin-left:120px">
+                @*<div class="col-lg-2 ml-auto">*@
+                @foreach (var item in Model.Value2)
+                {
+                    @item.Description
+                }
+                @*</div>*@
+
             </div>
 
             <!-- About Section Button -->
-            <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-                    <i class="fas fa-download mr-2"></i>
-                    Free Download!
-                </a>
-            </div>
+
 
         </div>
     </section>
@@ -178,41 +174,44 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>İsim</label>
-                                <input class="form-control" id="name" type="text" placeholder="İsminiz" required="required" data-validation-required-message="Lütfen adınızı giriniz.">
-                                <p class="help-block text-danger"></p>
+                    @using (Html.BeginForm("Index", "ShowCase", FormMethod.Post))
+                    {
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>İsim</label>
+                                    <input class="form-control" name="Name" id="name" type="text" placeholder="İsminiz" required="required" data-validation-required-message="Lütfen adınızı giriniz.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Email Adresi</label>
-                                <input class="form-control" id="email" type="email" placeholder="Email Adresiniz" required="required" data-validation-required-message="Lütfen e-posta adresinizi giriniz.">
-                                <p class="help-block text-danger"></p>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Email Adresi</label>
+                                    <input class="form-control" name="Email" type="email" placeholder="Email Adresiniz" required="required" data-validation-required-message="Lütfen e-posta adresinizi giriniz.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Telefon Numarası</label>
-                                <input class="form-control" id="phone" type="tel" placeholder="Telefon Numaranız" required="required" data-validation-required-message="Lütfen telefon numaranızı giriniz.">
-                                <p class="help-block text-danger"></p>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Mesaj Konusu</label>
+                                    <input class="form-control" name="Subject" id="phone" type="tel" placeholder="Mesajınızın Konusu" required="required" data-validation-required-message="Lütfen Mesajınızın Konusunu giriniz.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Mesajınız</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="Mesajınız" required="required" data-validation-required-message="Lütfen bir mesaj giriniz."></textarea>
-                                <p class="help-block text-danger"></p>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Mesajınız</label>
+                                    <textarea class="form-control" name="Message"id="message" rows="5" placeholder="Mesajınız" required="required" data-validation-required-message="Lütfen bir mesaj giriniz."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Gönder</button>
-                        </div>
-                    </form>
+                            <br>
+                            <div id="success"></div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Gönder</button>
+                            </div>
+                        </form>
+                    }
                 </div>
             </div>
 

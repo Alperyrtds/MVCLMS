@@ -21,6 +21,8 @@
         <AssociationConnector Association="DBLibraryModel.FK_Penalties_Operations" ManuallyRouted="false" />
         <AssociationConnector Association="DBLibraryModel.FK_Penalties_Users" ManuallyRouted="false" />
         <AssociationConnector Association="DBLibraryModel.FK_Operations_Emplooyes" />
+        <EntityTypeShape EntityType="DBLibraryModel.Aboutus" Width="1.5" PointX="6.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DBLibraryModel.Contact" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

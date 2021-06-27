@@ -17,7 +17,7 @@
 
         .sidebar {
             height: 100%;
-            width: 200px;
+            width: 250px;
             position: fixed;
             z-index: 1;
             top: 0;
@@ -28,6 +28,7 @@
         }
 
             .sidebar a {
+                margin-left: 30px;
                 padding: 6px 8px 6px 16px;
                 margin-bottom: 12px;
                 text-decoration: none;
@@ -37,14 +38,16 @@
             }
 
                 .sidebar a:hover {
+                    
                     color: #ff0000;
-                    -ms-transform: scale(1.25); /* IE 9 */
-                    -webkit-transform: scale(1.25); /* Safari 3-8 */
-                    transform: scale(1.25);
+                    font-family:Forte;
+                    -ms-transform: scale(2.50); /* IE 9 */
+                    -webkit-transform: scale(2.50); /* Safari 3-8 */
+                    transform: scale(1.5);
                 }
 
         .main {
-            margin-left: 200px; /* Same as the width of the sidenav */
+            margin-left: 250px; /* Same as the width of the sidenav */
             padding: 0px 10px;
         }
 
@@ -70,10 +73,11 @@
         <a href="/Employee/Index/"><i class="glyphicon glyphicon-eye-open"></i>&nbsp; Personeller</a>
         <a href="/OnLoan/GiveAway/"><i class="glyphicon glyphicon-circle-arrow-right"></i>&nbsp; Ödünç Kitap Ver</a>
         <a href="/OnLoan/Index/"><i class="glyphicon glyphicon-circle-arrow-left"></i>&nbsp; Ödünç Kitap Al</a>
+        <a href="/Statistics/Index/"><i class="glyphicon glyphicon-education"></i>&nbsp; İstatistikler</a>
         <a href="#"><i class="glyphicon glyphicon-usd"></i>&nbsp; Kasa</a>
         <a href="/Operation/Index/"><i class="glyphicon glyphicon-dashboard"></i>&nbsp; İşlemler</a>
         <a href="#"><i class="glyphicon glyphicon-picture"></i>&nbsp; Galeri</a>
-        <a href="/ShowCase/Index/"><i class="glyphicon glyphicon-gift"></i>&nbsp; Vitrin</a>
+        <a href="/ShowCase/Index/" target="_blank"><i class="glyphicon glyphicon-gift"></i>&nbsp; Vitrin</a>
         <a href="#"><i class="glyphicon glyphicon-cog"></i>&nbsp; Ayarlar</a>
         <a href="#"><i class="glyphicon glyphicon-plus"></i>&nbsp; Yardım</a>
         <a href="#"><i class="glyphicon glyphicon-remove"></i>&nbsp; Çıkış</a>
