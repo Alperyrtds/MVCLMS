@@ -23,6 +23,11 @@ namespace MVCLMS.Controllers
         [HttpPost]
         public ActionResult AddWriter(Writers writer)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddWriter");
+            }
+
             database.Writers.Add(writer);
             database.SaveChanges();
             return RedirectToAction("Index");

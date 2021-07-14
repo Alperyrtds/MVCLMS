@@ -23,13 +23,22 @@ namespace MVCLMS.Controllers
         [HttpPost]
         public ActionResult GiveAway(Operations operations)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("GiveAway");
+            }
             database.Operations.Add(operations);
             database.SaveChanges();
             return View();
         }
-        public ActionResult ReturnAway(int id)
+        public ActionResult ReturnAway(Operations operations)
         {
-            var onloan = database.Operations.Find(id);
+            var onloan = database.Operations.Find(operations.Id);
+            DateTime d1 = DateTime.Parse(onloan.ReturnDate.ToString());
+            DateTime d2 = DateTime.Parse(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+
+            ViewBag.dgr = d3.TotalDays;
             return View("ReturnAway", onloan);
         }
         public ActionResult UpdateOnLoan(Operations opr)

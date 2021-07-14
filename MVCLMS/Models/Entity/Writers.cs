@@ -11,7 +11,8 @@ namespace MVCLMS.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Writers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,14 @@ namespace MVCLMS.Models.Entity
         {
             this.Books = new HashSet<Books>();
         }
-    
+
         public int Id { get; set; }
+        [Required(ErrorMessage = "Yazar Adýný Boþ Geçemezsiniz")]
         public string Name { get; set; }
+        [StringLength(20,ErrorMessage ="Soyad 20 karakterden uzun olamaz")]
         public string Surname { get; set; }
         public string Detail { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books> Books { get; set; }
     }

@@ -14,6 +14,7 @@
     <div style="margin-top:20px">
         <label>Kitap ID</label>
         @Html.TextBoxFor(x => x.BookId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BookId)
     </div>
     <div style="margin-top:20px">
         <label>Personel Adı</label>
