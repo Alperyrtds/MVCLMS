@@ -282,6 +282,23 @@
     <Content Include="websignup\images\bg.jpg" />
     <Content Include="websignup\index.html" />
     <Content Include="websignup\w3layouts-License.txt" />
+    <Content Include="webtheme2\assets\favicon.ico" />
+    <Content Include="webtheme2\assets\img\bg-masthead.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\1.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\2.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\3.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\4.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\5.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\fullsize\6.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\1.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\2.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\3.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\4.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\5.jpg" />
+    <Content Include="webtheme2\assets\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="webtheme2\css\styles.css" />
+    <Content Include="webtheme2\index.html" />
+    <Content Include="webtheme2\js\scripts.js" />
     <Content Include="webuser\.gitignore" />
     <Content Include="webuser\css\simple-sidebar.css" />
     <Content Include="webuser\gulpfile.js" />
@@ -486,6 +503,7 @@
     <Content Include="webuser\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="webuser\vendor\jquery\jquery.min.map" />
     <Content Include="webuser\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\UserPanel\MyBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
