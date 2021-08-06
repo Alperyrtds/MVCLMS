@@ -54,5 +54,12 @@ namespace MVCLMS.Controllers
             database.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult WriterBooks(int id)
+        {
+            var writer = database.Books.Where(x => x.WriterId == id).ToList();
+            var wrtr = database.Writers.Where(x => x.Id == id).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
+            ViewBag.w1 = wrtr;
+            return View(writer);
+        }
     }
 }

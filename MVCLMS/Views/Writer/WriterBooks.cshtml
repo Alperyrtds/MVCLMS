@@ -1,0 +1,27 @@
+﻿@using MVCLMS.Models.Entity;
+@model List<Books>
+@{
+    ViewBag.Title = "WriterBooks";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.w1 ' ın Kitapları</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>YayınEvi</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Categories.Name</td>
+            <td>@item.Publisher</td>
+        </tr>
+    }
+</table>
+

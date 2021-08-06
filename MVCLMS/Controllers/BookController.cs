@@ -7,6 +7,7 @@ using MVCLMS.Models.Entity;
 
 namespace MVCLMS.Controllers
 {
+    
     public class BookController : Controller
     {
         DBLibraryEntities database = new DBLibraryEntities();

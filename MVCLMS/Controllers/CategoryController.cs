@@ -13,7 +13,7 @@ namespace MVCLMS.Controllers
         DBLibraryEntities database = new DBLibraryEntities();
         public ActionResult Index()
         {
-            var values = database.Categories.ToList();
+            var values = database.Categories.Where(x=>x.Status == true).ToList();
             return View(values);
         }
         [HttpGet]
@@ -31,7 +31,8 @@ namespace MVCLMS.Controllers
         public ActionResult DeleteCategory(int id)
         {
             var category = database.Categories.Find(id);
-            database.Categories.Remove(category);
+            //database.Categories.Remove(category);
+            category.Status = false;
             database.SaveChanges();
             return RedirectToAction("Index");
         }

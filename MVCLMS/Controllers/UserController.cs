@@ -17,7 +17,7 @@ namespace MVCLMS.Controllers
         public ActionResult Index(int page = 1)
         {
             //var values = database.Users.ToList();
-            var values = database.Users.ToList().ToPagedList(page,4);
+            var values = database.Users.ToList().ToPagedList(page, 4);
             return View(values);
         }
         [HttpGet]
@@ -38,7 +38,7 @@ namespace MVCLMS.Controllers
         }
         public ActionResult DeleteUser(int id)
         {
-            var user=database.Users.Find(id);
+            var user = database.Users.Find(id);
             database.Users.Remove(user);
             database.SaveChanges();
             return RedirectToAction("Index");
@@ -60,6 +60,13 @@ namespace MVCLMS.Controllers
             database.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+        public ActionResult UserBookHistory(int id)
+        {
+            var bookhistory = database.Operations.Where(x => x.UserId == id).ToList();
+            var userbook = database.Users.Where(x => x.Id == id).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
+            ViewBag.u1 = userbook;
+            return View(bookhistory);
         }
 
     }

@@ -38,6 +38,7 @@ namespace MVCLMS.Models.Entity
         public virtual DbSet<Writers> Writers { get; set; }
         public virtual DbSet<Aboutus> Aboutus { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

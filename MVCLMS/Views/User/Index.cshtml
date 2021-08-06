@@ -14,24 +14,22 @@
     <tr>
         <th>Kullanıcı ID</th>
         <th>Kullanıcı Adı</th>
-        <th>Kullanıcı Mail</th>
-        <th>Kullanıcı Adı</th>
-        <th>Kullanıcı Şifresi</th>
-        <th>Kullanıcı Telefon</th>
+        <th>Kullanıcı Soyadı</th>
+       
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Kullanıcı Kitap Geçmişi</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.Id</td>
             <td>@item.Name</td>
-            <td>@item.Mail</td>
-            <td>@item.Username</td>
-            <td>@item.Password</td>
-            <td>@item.PhoneNumber</td>
+            <td>@item.Surname</td>
+     
             <td><a href="/User/DeleteUser/@item.Id" class="btn btn-danger">Sil</a></td>
             <td><a href="/User/GetUser/@item.Id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/User/UserBookHistory/@item.Id" class="btn btn-success" style="background-color:lightseagreen">Kitap Geçmişi</a></td>
         </tr>
     }
 </table>

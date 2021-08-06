@@ -18,10 +18,14 @@ namespace MVCLMS.Controllers
         [HttpPost]
         public ActionResult SignIn(Users users)
         {
+
             var data = database.Users.FirstOrDefault(x => x.Mail == users.Mail && x.Password == users.Password);
+
             if (data != null)
             {
                 FormsAuthentication.SetAuthCookie(data.Mail, false);
+
+                //Session["user"] = data;
                 Session["Mail"] = data.Mail.ToString();
                 //TempData["Name"] = data.Name.ToString();
                 //TempData["Id"] = data.Id.ToString();
@@ -33,6 +37,7 @@ namespace MVCLMS.Controllers
             }
             else
             {
+                ViewBag.error = "Kullanıcı adınız veya şifreniz hatalıdır";
                 return View();
 
             }
